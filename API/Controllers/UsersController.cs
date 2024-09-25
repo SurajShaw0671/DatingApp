@@ -10,7 +10,7 @@ public class UsersController(DataContext dataContext) : BaseApiController
 {
     public readonly DataContext _dataContext = dataContext;
  //-------------------------------------------------------------------------------------------------       
-    [AllowAnonymous]
+ [AllowAnonymous]
     [HttpGet] /* api/Users  */
     public async Task <ActionResult<IEnumerable<AppUser>>> GetUsers()
     {
@@ -18,7 +18,7 @@ public class UsersController(DataContext dataContext) : BaseApiController
         return Ok(users);
     }
 //-------------------------------------------------------------------------------------------------
-    [Authorize]
+[Authorize]
     [HttpGet("{Id:int}")] /* api/Users/3  */
     public async Task<ActionResult<AppUser>> GetUsers(int Id)
     {
